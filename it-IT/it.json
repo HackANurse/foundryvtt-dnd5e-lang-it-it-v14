@@ -108,9 +108,9 @@
   "DND5E.TimeYear": "Anni",
   "DND5E.TimePerm": "Permanente",
 
-  "DND5E.TraitArmorProf": "Competenze nelle Armature",
-  "DND5E.TraitToolProf": "Competenze negli Strumenti",
-  "DND5E.TraitWeaponProf": "Competenze nelle Armi",
+  "DND5E.TraitArmorProf": "Competenza Armature",
+  "DND5E.TraitToolProf": "Competenza Strumenti",
+  "DND5E.TraitWeaponProf": "Competenza Armi",
 
   "DND5E.Action": "Azione",
   "DND5E.Attack": "Attacco",
