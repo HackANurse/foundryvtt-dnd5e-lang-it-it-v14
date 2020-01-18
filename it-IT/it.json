@@ -180,13 +180,13 @@
   "DND5E.SkillSte": "Furtività",
   "DND5E.SkillSur": "Sopravvivenza",
 
-  "DND5E.SpellAdd": "Aggiungi Incantesimo",
+  "DND5E.SpellAdd": "Aggiungi",
   "DND5E.SpellNone": "Nessuno",
   "DND5E.SpellCantrip": "Trucchetto",
-  "DND5E.SpellLevel": "Livello Incantesimo",
-  "DND5E.SpellSchool": "Scuola Incantesimo",
-  "DND5E.SpellTarget": "Target Incantesimo",
-  "DND5E.SpellUsage": "Utilizzo Incantesimo",
+  "DND5E.SpellLevel": "Livello",
+  "DND5E.SpellSchool": "Scuola",
+  "DND5E.SpellTarget": "Target",
+  "DND5E.SpellUsage": "Utilizzo",
 
   "DND5E.SpellLevel0": "Trucchetto",
   "DND5E.SpellLevel1": "1° Livello",
@@ -257,7 +257,7 @@
   "DND5E.WeaponPropertiesVer": "Versatile",
 
   "DND5E.Action": "Azione",
-  "DND5E.Add": "Aggiungi",
+  "DND5E.Add": "Agg.",
   "DND5E.Attack": "Attacco",
   "DND5E.Attributes": "Attributi",
   "DND5E.Attuned": "In Sintonia",
