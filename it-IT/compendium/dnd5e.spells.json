@@ -1,5 +1,15 @@
 {
     "label": "Incantesimi (SRD)",
+    "mapping": {
+        "range": {
+            "path": "data.range",
+            "converter": "range"
+        },
+        "target": {
+            "path": "data.target",
+            "converter": "range"
+        }
+    },
     "entries": [
         { "id": "Haste", "name": "Velocità", "description": "<p>L'incantatore sceglie una creatura consenziente entro gittata e che egli sia in grado di vedere. Finché l'incantesimo non termina, il bersaglio ottiene un bonus di +2 alla CA, dispone di vantaggio ai tiri salvezza su Destrezza, la sua velocità raddoppia, e ottiene un'azione aggiuntiva a ogni suo turno. L'azione aggiuntiva può essere usata soltanto per effettuare un'azione di Attacco (solo attacchi con le armi), Disimpegno, Nascondersi, Scatto o Usare un Oggetto. Quando l'incantesimo termina, il bersaglio non può muoversi o effettuare azioni fino alla fine del suo turno successivo, in quanto è sopraffatto da un'ondata di spossatezza.</p>" },
         { "id": "Heal", "name": "Guarigione", "description": "<p>Scegli una creatura a gittata che puoi vedere. Un’ondata di energia positiva travolge la creatura, facendole recuperare 70 punti ferita. L’incantesimo pone anche termine a qualsiasi cecità, sordità e malattia che affligga il bersaglio. Questo incantesimo non ha effetto su costrutti o non morti.</p><p><strong>Ai Livelli Superiori.</strong> Quando esegui questo incantesimo usando uno slot incantesimo di 7° livello o più alto, l’ammontare guarito aumenta di 10 per ogni livello dello slot sopra il 6°.</p>" },

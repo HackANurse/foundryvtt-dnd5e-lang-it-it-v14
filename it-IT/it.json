@@ -109,8 +109,8 @@
   "DND5E.DistAny": "Qualsiasi",
   "DND5E.DistSelf": "Personale",
   "DND5E.DistTouch": "Contatto",
-  "DND5E.DistFt": "Piedi",
-  "DND5E.DistMi": "Miglia",
+  "DND5E.DistFt": "Metri",
+  "DND5E.DistMi": "Km",
 
   "DND5E.EquipmentLight": "Armatura Leggera",
   "DND5E.EquipmentMedium": "Armatura Media",
@@ -148,10 +148,10 @@
   "DND5E.LimitedUseCharges": "Cariche",
 
   "DND5E.SchoolAbj": "Abiurazione",
-  "DND5E.SchoolCon": "Invocazione",
+  "DND5E.SchoolCon": "Evocazione",
   "DND5E.SchoolDiv": "Divinazione",
   "DND5E.SchoolEnc": "Ammaliamento",
-  "DND5E.SchoolEvo": "Evocazione",
+  "DND5E.SchoolEvo": "Invocazione",
   "DND5E.SchoolIll": "Illusione",
   "DND5E.SchoolNec": "Necromanzia",
   "DND5E.SchoolTrs": "Trasmutazione",

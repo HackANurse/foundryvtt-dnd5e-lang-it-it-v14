@@ -1,5 +1,11 @@
 {
     "label": "Oggetti (SRD)",
+    "mapping": {
+        "weight": {
+            "path": "data.weight",
+            "converter": "weight"
+        }
+    },
     "entries": [
         { "id": "Antitoxin", "name": "Antitossina", "description": "<p>Una creatura che beve questa fiala di lìquìdo, dispone di vantaggio ai tiri salvezza contro veleno per 1 ora. Non conferisce alcun beneficio ai costrutti o ai non morti</p>" },
         { "id": "Abacus", "name": "Abaco", "description": "<p>L'abaco, chiamato anche cornice di conteggio, è uno strumento di calcolo.</p>" },
