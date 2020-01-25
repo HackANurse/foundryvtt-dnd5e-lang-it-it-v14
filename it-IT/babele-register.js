@@ -1,5 +1,7 @@
 
-Hooks.on('init', () => {
+import { ActorSheet5eCharacter } from "../../systems/dnd5e/module/actor/sheets/character.js";
+
+Hooks.once('init', () => {
 
 	if(typeof Babele !== 'undefined') {
 		
@@ -30,5 +32,21 @@ Hooks.on('init', () => {
 			}
 		});
 	}
-	
+});
+
+class ActorSheet5eCharacterIt extends ActorSheet5eCharacter {
+
+	_computeEncumbrance(totalWeight, actorData) {
+		let enc = super._computeEncumbrance(totalWeight, actorData);
+		enc.max = enc.max/2;
+		enc.pct = Math.min(enc.value * 100 / enc.max, 99);
+		enc.encumbered = enc.pct > (2/3);
+		return enc;
+	}
+}
+
+Hooks.once("ready", () => {
+
+	Actors.unregisterSheet("dnd5e", ActorSheet5eCharacter);
+	Actors.registerSheet("dnd5e", ActorSheet5eCharacterIt, { types: ["character"], makeDefault: true });
 });
