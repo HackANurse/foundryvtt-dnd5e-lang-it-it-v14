@@ -50,3 +50,7 @@ Hooks.once("ready", () => {
 	Actors.unregisterSheet("dnd5e", ActorSheet5eCharacter);
 	Actors.registerSheet("dnd5e", ActorSheet5eCharacterIt, { types: ["character"], makeDefault: true });
 });
+
+Hooks.on("renderActorSheet5eCharacterIt", (app, html, data) => {
+	Hooks.call("renderActorSheet5eCharacter", app, html, data);
+});

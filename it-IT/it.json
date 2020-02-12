@@ -15,6 +15,8 @@
   "SETTINGS.5eNoExpL": "Rimuove le barre dell'Esperienza dalle schede dei personaggi",
   "SETTINGS.5eAutoCollapseCardN": "Comprimi Schede degli Oggetti nella Chat",
   "SETTINGS.5eAutoCollapseCardL": "Comprimi automaticamente la scheda di descrizione dell'oggetto nel registro chat",
+  "SETTINGS.5eAutoSpellTemplateN": "Posiziona sempre il modello dell'incantesimo",
+  "SETTINGS.5eAutoSpellTemplateL": "Quando viene lanciato un incantesimo, l'impostazione predefinita crea automaticamente l'eventuale modello misurato corrispondente (richiede il ruolo TRUSTED o superiore)",
 
   "DND5E.FlagsInstructions": "Configura privilegi e tratti del personaggio per perfezionare i comportamenti del sistema D&D5e",
   "DND5E.FlagsTitle": "Configura Tratti Speciali",
@@ -57,6 +59,7 @@
 
   "DND5E.ChatReqMats": "Materiali Richiesti",
   "DND5E.ChatOtherFormula": "Altra Formula",
+  "DND5E.ChatPlaceTemplate": "Posiziona Modello di Misura",
 
   "DND5E.ComponentVerbal": "Verbale",
   "DND5E.ComponentSomatic": "Somatico",
@@ -81,6 +84,7 @@
 
   "DND5E.ConsumablePotion": "Pozione",
   "DND5E.ConsumablePoison": "Veleno",
+  "DND5E.ConsumableFood": "Food",
   "DND5E.ConsumableScroll": "Pergamena",
   "DND5E.ConsumableWand": "Bacchetta",
   "DND5E.ConsumableRod": "Asta",
@@ -304,5 +308,14 @@
   "DND5E.Usage": "Utilizzo",
   "DND5E.Versatile": "Versatile",
   "DND5E.Proficiency": "Competenza",
-  "DND5E.Weight": "Peso"
+  "DND5E.Weight": "Peso",
+
+
+
+  "DND5E.HitDice": "Dado Vita",
+  "DND5E.HitDiceUsed": "Dado Vita Usato",
+  "DND5E.DIALOG.SHORTREST.Prompt": "Voi fare un Riposo Breve? Con un Riposo Breve puoi spendere i Dadi Vita rimanenti e recuperare risorse primarie o secondarie.",
+  "DND5E.DIALOG.SHORTREST.Select": "Seleziona il Dado da Tirare",
+  "DND5E.DIALOG.SHORTREST.NoHd": "Nessun Dado Vita rimanente"
+
 }
