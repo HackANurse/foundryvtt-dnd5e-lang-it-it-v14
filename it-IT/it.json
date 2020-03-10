@@ -137,6 +137,8 @@
 
   "DND5E.HealingTemp": "Punti Ferita (Temporanei)",
 
+  "DND5E.Initiative": "Iniziativa",
+
   "DND5E.ItemContainerCapacity": "Capacità",
   "DND5E.ItemContainerCapacityItems": "Oggetti",
   "DND5E.ItemContainerCapacityType": "Tipo Capacità",
@@ -145,6 +147,9 @@
   "DND5E.ItemContainerHeader": "Contenitori",
   "DND5E.ItemContainerProperties": "Proprietà Contenitori",
   "DND5E.ItemContainerWeightless": "Contenuti Privi di Peso",
+  "DND5E.ItemAdd": "Create Oggetto",
+  "DND5E.ItemEdit": "Modifica Oggetto",
+  "DND5E.ItemDelete": "Elimina Oggetto",
 
   "DND5E.LimitedUseSR": "Riposo Breve",
   "DND5E.LimitedUseLR": "Riposo Lungo",
@@ -207,6 +212,8 @@
   "DND5E.SpellPrepPrepared": "Preparato",
   "DND5E.SpellPrepInnate": "Incantesimo Innato",
   "DND5E.SpellPrepPact": "Patto Magico",
+  "DND5E.SpellPrepared": "Preparato",
+  "DND5E.SpellUnpreprared": "Non Preparato",
 
   "DND5E.TargetAlly": "Alleato",
   "DND5E.TargetCreature": "Creatura",
@@ -283,7 +290,6 @@
   "DND5E.Health": "Punti Ferita",
   "DND5E.Healing": "Guarigione",
   "DND5E.HealthFormula": "Formula per i Punti Ferita",
-  "DND5E.HitDice": "Dado Vita",
   "DND5E.Inventory": "Inventario",
   "DND5E.Inspiration": "Ispirazione",
   "DND5E.Features": "Privilegi",
@@ -305,7 +311,9 @@
   "DND5E.SpeedSpecial": "Movim. Speciale",
   "DND5E.Spellbook": "Incantesimi",
   "DND5E.SpecialTraits": "Tratti Speciali",
+  "DND5E.Unequipped": "Non Equipaggiato",
   "DND5E.Usage": "Utilizzo",
+  "DND5E.Uses": "Utilizzi",
   "DND5E.Versatile": "Versatile",
   "DND5E.Proficiency": "Competenza",
   "DND5E.Weight": "Peso",
