@@ -31,26 +31,8 @@ Hooks.once('init', () => {
 				}
 			}
 		});
+
+		CONFIG.DND5E.encumbrance.currencyPerWeight = 100;
+		CONFIG.DND5E.encumbrance.strMultiplier = 7.5;
 	}
-});
-
-class ActorSheet5eCharacterIt extends ActorSheet5eCharacter {
-
-	_computeEncumbrance(totalWeight, actorData) {
-		let enc = super._computeEncumbrance(totalWeight, actorData);
-		enc.max = enc.max/2;
-		enc.pct = Math.min(enc.value * 100 / enc.max, 99);
-		enc.encumbered = enc.pct > (2/3);
-		return enc;
-	}
-}
-
-Hooks.once("ready", () => {
-
-	Actors.unregisterSheet("dnd5e", ActorSheet5eCharacter);
-	Actors.registerSheet("dnd5e", ActorSheet5eCharacterIt, { types: ["character"], makeDefault: true });
-});
-
-Hooks.on("renderActorSheet5eCharacterIt", (app, html, data) => {
-	Hooks.call("renderActorSheet5eCharacter", app, html, data);
 });
