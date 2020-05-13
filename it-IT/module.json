@@ -2,7 +2,7 @@
   "name": "FoundryVTT-dnd5e-it",
   "title": "DnD5e Italian Translation",
   "description": "Add Italian language to dnd5e system for FoundryVTT.",
-  "version": "0.18",
+  "version": "0.19",
   "minimumCoreVersion" : "0.5.5",
   "compatibleCoreVersion":"0.5.5",
   "author": "ariakas81, Simone",
