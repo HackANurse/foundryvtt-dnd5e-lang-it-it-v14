@@ -15,13 +15,13 @@ Hooks.once('init', () => {
 				if(range) {
 					if(range.units === 'ft') {
 						if(range.long) {
-							range = mergeObject(range, { long: range.long*0.3 });
+							range = mergeObject(range, { long: Math.floor(range.long*0.3) });
 						}
-						return mergeObject(range, { value: range.value*0.3 });
+						return mergeObject(range, { value: Math.floor(range.value*0.3) });
 					}
 					if(range.units === 'mi') {
 						if(range.long) {
-							range = mergeObject(range, { long: range.long*1.5 });
+							range = mergeObject(range, { long: Math.floor(range.long*1.5) });
 						}
 						return mergeObject(range, { value: range.value*1.5 });
 					}
