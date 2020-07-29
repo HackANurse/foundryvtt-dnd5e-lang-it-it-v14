@@ -34,3 +34,7 @@ Hooks.once('init', () => {
 		CONFIG.DND5E.encumbrance.strMultiplier = 7.5;
 	}
 });
+
+Hooks.on('preCreateScene', (scene) => {
+	mergeObject(scene, { "gridUnits": "mt", "gridDistance": 1.5 });
+});
