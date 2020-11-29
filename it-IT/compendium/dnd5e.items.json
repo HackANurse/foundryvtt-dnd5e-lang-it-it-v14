@@ -8,6 +8,10 @@
         "range": {
             "path": "data.range",
             "converter": "range"
+        },
+        "rarity": {
+            "path": "data.rarity",
+            "converter": "rarity"
         }
     },
     "entries": [

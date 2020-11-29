@@ -1,0 +1,8 @@
+
+.dnd5e.sheet.actor > section > form > header > section > ul.attributes.flexrow > li:nth-child(3) > h4 {
+    width: 100px;
+}
+
+.dnd5e.sheet.actor ul.skills-list {
+    flex: 0 0 190px;
+}

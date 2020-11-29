@@ -2,9 +2,9 @@
   "name": "FoundryVTT-dnd5e-it",
   "title": "DnD5e Italian Translation",
   "description": "Add Italian language to dnd5e system for FoundryVTT.",
-  "version": "0.27",
-  "minimumCoreVersion" : "0.6.3",
-  "compatibleCoreVersion":"0.7.4",
+  "version": "0.28",
+  "minimumCoreVersion" : "0.7.6",
+  "compatibleCoreVersion":"0.7.7",
 
   "dependencies": [{
     "name": "babele",
@@ -15,7 +15,9 @@
   "author": "ariakas81, Simone, MrDaerlic, ciuei, DMage, Floppy, heirold",
   "esmodules": ["babele-register.js"],
   "scripts": [],
-  "styles": [],
+  "styles": [
+    "./style.css"
+  ],
   "packs": [],
 
   "languages": [{
@@ -26,5 +28,5 @@
 
   "url": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it",
   "manifest": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/raw/master/it-IT/module.json",
-  "download": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/-/jobs/artifacts/0.27/raw/dnd5e-it-IT.zip?job=build"
+  "download": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/-/jobs/artifacts/0.28/raw/dnd5e-it-IT.zip?job=build"
 }
