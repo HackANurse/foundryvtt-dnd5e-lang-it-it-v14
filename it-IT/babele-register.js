@@ -287,10 +287,13 @@ Hooks.once('init', () => {
 			}
 		});
 
-		Babele.get().onDemandConverters(["race", "languages", "senses"]);
-
 		CONFIG.DND5E.encumbrance.currencyPerWeight = 100;
 		CONFIG.DND5E.encumbrance.strMultiplier = 7.5;
+
+		CONFIG.DND5E.movementUnits = {
+			"m": "Metri",
+			"km": "Km"
+		}
 	}
 });
 
