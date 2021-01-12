@@ -148,12 +148,16 @@ var rarity = {
 	"Legendary": "Leggendario"
 };
 
+function round(num) {
+	return Math.round((num + Number.EPSILON) * 100) / 100;
+}
+
 function footsToMeters(ft) {
-	return Math.floor(parseInt(ft)*0.3);
+	return round(parseInt(ft)*0.3);
 }
 
 function milesToMeters(mi) {
-	return Math.floor(parseInt(mi)*1.5);
+	return round(parseInt(mi)*1.5);
 }
 
 function parseSenses(sensesText) {
