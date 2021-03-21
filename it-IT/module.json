@@ -4,7 +4,7 @@
   "description": "Add Italian language to dnd5e system for FoundryVTT.",
   "version": "0.33",
   "minimumCoreVersion" : "0.7.6",
-  "compatibleCoreVersion":"0.7.7",
+  "compatibleCoreVersion":"0.7.9",
 
   "dependencies": [{
     "name": "babele",
@@ -12,7 +12,7 @@
     "version": "1.19"
   }],
 
-  "author": "ariakas81, Simone, MrDaerlic, ciuei, DMage, Floppy, heirold",
+  "author": "ariakas81, Simone, MrDaerlic, ciuei, DMage, Floppy, heirold, Elia.Hard",
   "esmodules": ["babele-register.js"],
   "scripts": [],
   "styles": [

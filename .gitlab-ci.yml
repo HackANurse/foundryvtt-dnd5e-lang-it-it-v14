@@ -21,6 +21,7 @@ build:
   artifacts:
     name: dnd5e-it-IT
     when: on_success
+    expire_in: never
     paths:
       - dnd5e-it-IT.zip
   when: on_success
