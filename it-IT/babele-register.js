@@ -152,6 +152,10 @@ function round(num) {
 	return Math.round((num + Number.EPSILON) * 100) / 100;
 }
 
+function lbToKg(lb) {
+	return parseInt(lb)/2;
+}
+
 function footsToMeters(ft) {
 	return round(parseInt(ft)*0.3);
 }
@@ -195,10 +199,54 @@ function parseDamage(damage) {
 	return damage;
 }
 
+function convertEnabled() {
+	return game.settings.get("FoundryVTT-dnd5e-it", "convert");
+}
+
+function setUnitLabels() {
+	let convert = convertEnabled();
+
+	mergeObject(CONFIG.DND5E.distanceUnits, {
+		"ft": convert ? "Metri": "Piedi",
+		"mi": convert ? "Km": "Miglia"
+	});
+
+	if(convert) {
+		CONFIG.DND5E.movementUnits = {
+			"m": "Metri",
+			"km": "Km"
+		}
+	} else {
+		CONFIG.DND5E.movementUnits = {
+			"ft": "Piedi",
+			"mi": "Miglia"
+		}
+	}
+}
+
+function setEncumbranceData() {
+	let convert = convertEnabled();
+	CONFIG.DND5E.encumbrance.currencyPerWeight = convert ? 100 : 50;
+	CONFIG.DND5E.encumbrance.strMultiplier = convert ? 7.5 : 15;
+}
+
 Hooks.once('init', () => {
 
 	if(typeof Babele !== 'undefined') {
-		
+
+		game.settings.register("FoundryVTT-dnd5e-it", "convert", {
+			name: "Conversione Automatica",
+			hint: "Applica automaticamente la conversione da sistema imperiale a sistema metrico",
+			scope: "world",
+			type: Boolean,
+			default: true,
+			config: true,
+			onChange: convert => {
+				setUnitLabels();
+				setEncumbranceData();
+			}
+		});
+
 		Babele.get().register({
 			module: 'FoundryVTT-dnd5e-it',
 			lang: 'it',
@@ -206,9 +254,21 @@ Hooks.once('init', () => {
 		});
 
 		Babele.get().registerConverters({
-			"weight": (value) => { return parseInt(value)/2 },
+			"weight": (value) => {
+
+				if(!convertEnabled()) {
+					return value;
+				}
+
+				return lbToKg(value);
+			},
 			"range": (range) => {
 				if(range) {
+
+					if(!convertEnabled()) {
+						return range;
+					}
+
 					if(range.units === 'ft') {
 						if(range.long) {
 							range = mergeObject(range, { long: footsToMeters(range.long) });
@@ -231,6 +291,11 @@ Hooks.once('init', () => {
 				return alignments[alignment.toLowerCase()];
 			},
 			"movement": (movement) => {
+
+				if(!convertEnabled()) {
+					return movement;
+				}
+
 				let convert = (value) => { return value; };
 				let units = movement.units;
 				if(units === 'ft') {
@@ -290,43 +355,44 @@ Hooks.once('init', () => {
 				return rarity[r] ? rarity[r] : r
 			}
 		});
-
-		CONFIG.DND5E.encumbrance.currencyPerWeight = 100;
-		CONFIG.DND5E.encumbrance.strMultiplier = 7.5;
-
-		CONFIG.DND5E.movementUnits = {
-			"m": "Metri",
-			"km": "Km"
-		}
 	}
 });
 
+Hooks.once('ready', () => {
+	setUnitLabels();
+	setEncumbranceData();
+});
+
 Hooks.on('preCreateScene', (scene) => {
-	mergeObject(scene, { "gridUnits": "m", "gridDistance": 1.5 });
+	if(convertEnabled()) {
+		mergeObject(scene, { "gridUnits": "m", "gridDistance": 1.5 });
+	}
 });
 
 Hooks.on('createActor', (actor) => {
 	if(actor.getFlag("babele", "translated")) {
 		return;
 	}
-	actor.update({
-		token: {
-			dimSight: footsToMeters(actor.data.token.dimSight),
-			brightSight: footsToMeters(actor.data.token.brightSight)
-		},
-		data: {
-			attributes: {
-				movement: {
-					burrow: 0,
-					climb: 0,
-					fly: 0,
-					swim: 0,
-					units: 'm',
-					walk: 9
-				}
-			}
-		}
-	});
+	if(convertEnabled()) {
+		actor.update({
+			 token: {
+				 dimSight: footsToMeters(actor.data.token.dimSight),
+				 brightSight: footsToMeters(actor.data.token.brightSight)
+			 },
+			 data: {
+				 attributes: {
+					 movement: {
+						 burrow: 0,
+						 climb: 0,
+						 fly: 0,
+						 swim: 0,
+						 units: 'm',
+						 walk: 9
+					 }
+				 }
+			 }
+		 });
+	}
 })
 
 async function skillSorting() {
