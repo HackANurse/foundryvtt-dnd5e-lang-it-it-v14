@@ -435,6 +435,51 @@
       "id": "A. Appendices",
       "name": "A. Appendici",
       "description": "<p>@Compendium[dnd5e.rules.lrgT2KMBGTgZD4sA]{Appendice PH-A: Condizioni}</p>\n<p>@Compendium[dnd5e.rules.2JNtWRo7wMq08bXn]{Appendice PH-B: Divinit&agrave; del Multiverso}</p>\n<p>@Compendium[dnd5e.rules.YnBURsGSxWYiMVxw]{Appendice PH-C: I Piani di Esistenza}</p>\n<p>@Compendium[dnd5e.rules.rjStJTCJtoSqua8Z]{Appendice MM-A: Creature Varie}</p>\n<p>@Compendium[dnd5e.rules.wHI1i7HR2l0T3qVV]{Appendice MM-B: Personaggi Non Giocanti}</p>"
+    },
+    {
+      "id": "Climb",
+      "name": "Arrampicarsi",
+      "description": "<p>Un mostro che ha una velocit&agrave; di arrampicata pu&ograve; utilizzare tutto o parte del suo movimento per muoversi su superfici verticali. Il mostro non ha bisogno di spendere movimenti extra per arrampicarsi.</p>"
+    },
+    {
+      "id": "Concentration",
+      "name": "Concentrazione",
+      "description": "<p>Alcuni incantesimi richiedono di mantenere la concentrazione per mantenere attiva la loro magia. Se perdi la concentrazione, un simile incantesimo finisce.</p>\n<p>Se un incantesimo deve essere mantenuto con concentrazione, quel fatto appare nella sua voce Durata e l'incantesimo specifica per quanto tempo puoi concentrarti su di esso. Puoi terminare la concentrazione in qualsiasi momento (nessuna azione richiesta).</p>\n<p>La normale attivit&agrave;, come muoversi e attaccare, non interferisce con la concentrazione. I seguenti fattori possono interrompere la concentrazione:</p>\n<ul>\n<li><strong>Lanciare un altro incantesimo che richiede concentrazione. </strong>Perdi la concentrazione su un incantesimo se lanci un altro incantesimo che richiede concentrazione. Non puoi concentrarti su due incantesimi contemporaneamente.</li>\n<li><strong>Subire danni. </strong>Ogni volta che subisci danni mentre ti concentri su un incantesimo, devi effettuare un tiro salvezza su Costituzione per mantenere la concentrazione. La CD &egrave; pari a 10 o met&agrave; del danno che subisci, qualunque sia il numero pi&ugrave; alto. Se subisci danni da pi&ugrave; fonti, come una freccia e il soffio di un drago, effettui un tiro salvezza separato per ciascuna fonte di danno.</li>\n<li><strong>Essere inabili o uccisi. </strong>Perdi la concentrazione su un incantesimo se sei inabile o se muori.</li>\n</ul>\n<p>Il GM potrebbe anche decidere che alcuni fenomeni ambientali, come un'onda che si infrange su di te mentre sei su una nave sbattuta dalla tempesta, richiedono che tu superi un tiro salvezza su Costituzione con CD 10 per mantenere la concentrazione su un incantesimo.</p>"
+    },
+    {
+      "id": "Swim",
+      "name": "Nuotare",
+      "description": "<p>Un mostro che ha una velocit&agrave; di nuoto non ha bisogno di spendere movimenti extra per nuotare.</p>"
+    },
+    {
+      "id": "Tremorsense",
+      "name": "Percezione Tellurica",
+      "description": "<p>Un mostro con percezione tellurica pu&ograve; rilevare e individuare l'origine delle vibrazioni entro un raggio specifico, a condizione che il mostro e la fonte delle vibrazioni siano in contatto con la stessa terra o sostanza. Tremorsense non pu&ograve; essere utilizzato per rilevare creature volanti o incorporee. Molte creature scavatrici, come ankheg e umber hulk, hanno questo senso speciale.</p>"
+    },
+    {
+      "id": "Burrow",
+      "name": "Scavare",
+      "description": "<p>Un mostro che ha una velocit&agrave; nello scavare pu&ograve; usare quella velocit&agrave; per muoversi attraverso sabbia, terra, fango o ghiaccio. Un mostro non pu&ograve; scavare attraverso la roccia solida a meno che non abbia un tratto speciale che gli consente di farlo.</p>"
+    },
+    {
+      "id": "Darkvision",
+      "name": "Scurovisione",
+      "description": "<p>Un mostro con scurovisione pu&ograve; vedere al buio entro un raggio specifico. Il mostro pu&ograve; vedere in una luce fioca all'interno del raggio come se fosse una luce intensa e nell'oscurit&agrave; come se fosse una luce fioca. Il mostro non riesce a distinguere il colore nell'oscurit&agrave;, solo le sfumature di grigio. Molte creature che vivono sottoterra hanno questo senso speciale.</p>"
+    },
+    {
+      "id": "Blindsight",
+      "name": "Vista Cieca",
+      "description": "<p>Un mostro con vista cieca pu&ograve; percepire l'ambiente circostante senza fare affidamento sulla vista, entro un raggio specifico.</p>\n<p>Le creature senza occhi, come i grimlock e le melme grigie, hanno tipicamente questo senso speciale, cos&igrave; come le creature con ecolocalizzazione o sensi intensificati, come pipistrelli e veri draghi.</p>\n<p>Se un mostro &egrave; naturalmente cieco, ha una nota tra parentesi in tal senso, indicando che il raggio della sua vista cieca definisce il raggio massimo della sua percezione.</p>"
+    },
+    {
+      "id": "Truesight",
+      "name": "Vista Pura",
+      "description": "<p>Un mostro con la vista pura pu&ograve;, fino a una distanza specifica, vedere nell'oscurit&agrave; normale e magica, vedere creature e oggetti invisibili, rilevare automaticamente illusioni visive e riuscire a tiri salvezza contro di loro e percepire la forma originale di un mutaforma o di una creatura che &egrave; trasformato per magia. Inoltre, il mostro pu&ograve; vedere nel Piano Etereo entro lo stesso raggio.</p>"
+    },
+    {
+      "id": "Fly",
+      "name": "Volare",
+      "description": "<p>Un mostro che ha una velocit&agrave; di volo pu&ograve; utilizzare tutto o parte del suo movimento per volare. Alcuni mostri hanno la capacit&agrave; di librarsi, il che li rende difficili da mettere fuori combattimento (come spiegato nelle regole sul volo nel Manuale del giocatore). Un simile mostro smette di librarsi quando muore.</p>"
     }
   ]
 }
