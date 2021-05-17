@@ -5,10 +5,6 @@
       "path": "data.details.alignment",
       "converter": "alignement"
     },
-    "type": {
-      "path": "data.details.type",
-      "converter": "type"
-    },
     "senses": {
       "path": "data.traits.senses",
       "converter": "senses"

@@ -284,9 +284,6 @@ Hooks.once('init', () => {
 					return range;
 				}
 			},
-			"type": (type) => {
-				return types[type.toLowerCase()];
-			},
 			"alignement": (alignment) => {
 				return alignments[alignment.toLowerCase()];
 			},
