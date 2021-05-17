@@ -200,7 +200,7 @@ function parseDamage(damage) {
 }
 
 function convertEnabled() {
-	return game.settings.get("FoundryVTT-dnd5e-it", "convert");
+	return game.settings.get("translation-dnd5e-it", "convert");
 }
 
 function setUnitLabels() {
@@ -234,7 +234,7 @@ Hooks.once('init', () => {
 
 	if(typeof Babele !== 'undefined') {
 
-		game.settings.register("FoundryVTT-dnd5e-it", "convert", {
+		game.settings.register("translation-dnd5e-it", "convert", {
 			name: "Conversione Automatica",
 			hint: "Applica automaticamente la conversione da sistema imperiale a sistema metrico",
 			scope: "world",
@@ -248,7 +248,7 @@ Hooks.once('init', () => {
 		});
 
 		Babele.get().register({
-			module: 'FoundryVTT-dnd5e-it',
+			module: 'translation-dnd5e-it',
 			lang: 'it',
 			dir: 'compendium'
 		});
