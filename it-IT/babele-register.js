@@ -352,6 +352,21 @@ Hooks.once('init', () => {
 				return rarity[r] ? rarity[r] : r
 			}
 		});
+
+		CONFIG.DND5E.classFeatures = {
+			"barbaro": CONFIG.DND5E.classFeatures["barbarian"],
+			"bardo": CONFIG.DND5E.classFeatures["bard"],
+			"chierico": CONFIG.DND5E.classFeatures["cleric"],
+			"druido": CONFIG.DND5E.classFeatures["druid"],
+			"guerriero": CONFIG.DND5E.classFeatures["fighter"],
+			"monaco": CONFIG.DND5E.classFeatures["monk"],
+			"paladino": CONFIG.DND5E.classFeatures["paladin"],
+			"ranger": CONFIG.DND5E.classFeatures["ranger"],
+			"ladro": CONFIG.DND5E.classFeatures["rogue"],
+			"stregone": CONFIG.DND5E.classFeatures["sorcerer"],
+			"warlock": CONFIG.DND5E.classFeatures["warlock"],
+			"mago": CONFIG.DND5E.classFeatures["wizard"]
+		};
 	}
 });
 
