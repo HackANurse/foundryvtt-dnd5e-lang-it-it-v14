@@ -130,14 +130,45 @@ var races = {
 	"Gnome": "Gnomo delle Rocce",
 	"Rock Gnome": "Gnomo",
 	"Half Elf": "Mezzelfo",
+	"Half-Elf": "Mezzelfo",
 	"Half-elf": "Mezzelfo",
 	"Halfling": "Halfling",
 	"Lightfoot Halfling": "Halfling Piedelesto",
 	"Half Orc": "Mezzorco",
+	"Half-Orc": "Mezzorco",
 	"HUMAN": "Umano",
 	"Human": "Umano",
 	"Variant Human": "Umano Variante",
 	"Tiefling": "Tiefling"
+};
+
+var classes = {
+	"Barbarian": "Barbaro",
+	"Bard": "Bardo",
+	"Cleric": "Chierico",
+	"Druid": "Druido",
+	"Fighter": "Guerriero",
+	"Monk": "Monaco",
+	"Paladin": "Paladino",
+	"Ranger": "Ranger",
+	"Rogue": "Ladro",
+	"Sorcerer": "Stregone",
+	"Warlock": "Warlock",
+	"Wizard": "Mago",
+	"Champion": "Campione",
+	"College of Lore": "Collegio della Sapienza",
+	"Oath of Devotion": "Giuramento di Devozione",
+	"Life Domain": "Dominio della Vita",
+	"Circle of the Land": "Circolo della Terra",
+	"The Fiend": "Patrono Immondo",
+	"Hunter": "Cacciatore",
+	"School of Evocation": "Scuola di Evocazione",
+	"Path of the Berserker": "Percorso del Berserker",
+	"Eldritch Blast": "Deflagrazione Occulta",
+	"Pact of the Tome": "Patto del Tomo",
+	"Pact of the Blade": "Patto della Lama",
+	"Pact of the Chain": "Patto della Catena",
+	"Way of the Open Hand": "Via della Mano Aperta"
 };
 
 var rarity = {
@@ -153,14 +184,23 @@ function round(num) {
 }
 
 function lbToKg(lb) {
+	if(!lb) {
+		return lb;
+	}
 	return parseInt(lb)/2;
 }
 
 function footsToMeters(ft) {
+	if(!ft) {
+		return ft;
+	}
 	return round(parseInt(ft)*0.3);
 }
 
 function milesToMeters(mi) {
+	if(!mi) {
+		return mi;
+	}
 	return round(parseInt(mi)*1.5);
 }
 
@@ -203,31 +243,9 @@ function convertEnabled() {
 	return game.settings.get("translation-dnd5e-it", "convert");
 }
 
-function setUnitLabels() {
-	let convert = convertEnabled();
-
-	mergeObject(CONFIG.DND5E.distanceUnits, {
-		"ft": convert ? "Metri": "Piedi",
-		"mi": convert ? "Km": "Miglia"
-	});
-
-	if(convert) {
-		CONFIG.DND5E.movementUnits = {
-			"m": "Metri",
-			"km": "Km"
-		}
-	} else {
-		CONFIG.DND5E.movementUnits = {
-			"ft": "Piedi",
-			"mi": "Miglia"
-		}
-	}
-}
-
 function setEncumbranceData() {
 	let convert = convertEnabled();
-	CONFIG.DND5E.encumbrance.currencyPerWeight = convert ? 100 : 50;
-	CONFIG.DND5E.encumbrance.strMultiplier = convert ? 7.5 : 15;
+	game.settings.set("dnd5e", "metricWeightUnits", convert);
 }
 
 Hooks.once('init', () => {
@@ -242,7 +260,6 @@ Hooks.once('init', () => {
 			default: true,
 			config: true,
 			onChange: convert => {
-				setUnitLabels();
 				setEncumbranceData();
 			}
 		});
@@ -255,31 +272,29 @@ Hooks.once('init', () => {
 
 		Babele.get().registerConverters({
 			"weight": (value) => {
-
 				if(!convertEnabled()) {
 					return value;
 				}
-
 				return lbToKg(value);
 			},
 			"range": (range) => {
 				if(range) {
-
 					if(!convertEnabled()) {
 						return range;
 					}
-
-					if(range.units === 'ft') {
-						if(range.long) {
-							range = mergeObject(range, { long: footsToMeters(range.long) });
-						}
-						return mergeObject(range, { value: footsToMeters(range.value) });
+					if(range.units === "ft") {
+						return mergeObject(range, {
+							"value": footsToMeters(range.value),
+							"long": footsToMeters(range.long),
+							"units": "m"
+						});
 					}
-					if(range.units === 'mi') {
-						if(range.long) {
-							range = mergeObject(range, { long: milesToMeters(range.long) });
-						}
-						return mergeObject(range, { value: milesToMeters(range.value) });
+					if(range.units === "mi") {
+						return mergeObject(range, {
+							"value": milesToMeters(range.value),
+							"long": milesToMeters(range.long),
+							"units": "km"
+						});
 					}
 					return range;
 				}
@@ -350,6 +365,49 @@ Hooks.once('init', () => {
 			},
 			"rarity": (r) => {
 				return rarity[r] ? rarity[r] : r
+			},
+			"raceRequirements": (requirements) => {
+				let translated = requirements;
+				const names = Object.keys(races);
+				names.forEach(name => {
+					translated = translated.replaceAll(name, races[name])
+				});
+				return translated;
+			},
+			"classRequirements": (requirements) => {
+				let translated = requirements;
+				const names = Object.keys(classes);
+				names.forEach(name => {
+					translated = translated.replaceAll(name, classes[name])
+				});
+				return translated;
+			},
+			"classNameFormula": (formula) => {
+				if(formula && typeof formula === 'string') {
+					let translated = formula;
+					const names = Object.keys(classes);
+					names.forEach(name => {
+						translated = translated.replaceAll(name.toLowerCase(), classes[name].toLowerCase())
+					});
+					return translated;
+				}
+			},
+			"damagePartClassName": (array1) => {
+				for (let i=0; i< array1.length; i++) {
+					let array2 = array1[i];
+					for (let j=0; j< array2.length; j++) {
+						let translated = array2[j];
+						if (translated && typeof translated === 'string') {
+							const names = Object.keys(classes);
+							names.forEach(name => {
+								translated = translated.replaceAll(name.toLowerCase(), classes[name].toLowerCase())
+							});
+							array2[j] = translated;
+						}
+					}
+					array1[i] = array2;
+				}
+				return array1;
 			}
 		});
 
@@ -371,7 +429,6 @@ Hooks.once('init', () => {
 });
 
 Hooks.once('ready', () => {
-	setUnitLabels();
 	setEncumbranceData();
 });
 
