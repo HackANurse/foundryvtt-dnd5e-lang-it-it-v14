@@ -432,9 +432,11 @@ Hooks.once('ready', () => {
 	setEncumbranceData();
 });
 
-Hooks.on('preCreateScene', (scene) => {
+Hooks.on('createScene', (scene) => {
 	if(convertEnabled()) {
-		mergeObject(scene, { "gridUnits": "m", "gridDistance": 1.5 });
+		scene.update({
+			"gridUnits": "m", "gridDistance": 1.5
+		});
 	}
 });
 
