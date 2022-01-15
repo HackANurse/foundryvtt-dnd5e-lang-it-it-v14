@@ -2,7 +2,7 @@
   "name": "translation-dnd5e-it",
   "title": "DnD5e Italian Translation",
   "description": "Add Italian language to dnd5e system for FoundryVTT.",
-  "version": "0.47",
+  "version": "0.48",
   "minimumCoreVersion" : "0.8.5",
   "compatibleCoreVersion":"9",
 
@@ -32,5 +32,5 @@
 
   "url": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it",
   "manifest": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/raw/master/it-IT/module.json",
-  "download": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/-/jobs/artifacts/0.47/raw/dnd5e-it-IT.zip?job=build"
+  "download": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/-/jobs/artifacts/0.48/raw/dnd5e-it-IT.zip?job=build"
 }

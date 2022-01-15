@@ -12,6 +12,10 @@
         "rarity": {
             "path": "data.rarity",
             "converter": "rarity"
+        },
+        "target": {
+            "path": "data.target",
+            "converter": "range"
         }
     },
     "entries": [
@@ -755,6 +759,7 @@
         { "id": "Trident +3", "name": "Tridente +3", "description": "<p style=\"box-sizing: border-box; user-select: text; margin-bottom: 0cm; color: #191813; font-size: 13px; line-height: 13px;\"><em style=\"box-sizing: border-box; user-select: text;\"><span style=\"box-sizing: border-box; user-select: text; font-family: Calibri, serif;\"><span style=\"box-sizing: border-box; user-select: text; font-size: 11pt;\"><span lang=\"it\" style=\"box-sizing: border-box; user-select: text;\">Che sia per un dono demoniaco, un lascito celeste, un folle esperimento o magistrale artigianato, questa arma è potenziata perchè il portatore&nbsp;</span></span></span><span style=\"box-sizing: border-box; user-select: text; font-family: Calibri, serif;\"><span style=\"box-sizing: border-box; user-select: text; font-size: 11pt;\"><span lang=\"it\" style=\"box-sizing: border-box; user-select: text;\">possa causare</span></span></span><span style=\"box-sizing: border-box; user-select: text; font-family: Calibri, serif;\"><span style=\"box-sizing: border-box; user-select: text; font-size: 11pt;\"><span lang=\"it\" style=\"box-sizing: border-box; user-select: text;\">&nbsp;un maggior spargimento di sangue.</span></span></span></em></p><p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Il personaggio ottiene un bonus di +3 ai tiri per colpire e ai tiri per i danni effettuati con quest’arma magica.</p>" },
         { "id": "Trident of Fish Command", "name": "Tridente del Comando dei Pesci", "description": "<p><em>(Richiede sintonia)</em></p><p>Questo tridente &egrave; un&rsquo;arma magica dotata di 3 cariche. Finch&eacute; il personaggio lo trasporta, pu&ograve; usare un&rsquo;azione e spendere 1 carica per lanciare con esso l&rsquo;incantesimo @Compendium[dnd5e.spells.LrPvWHBPmiMQQsKB]{Dominare Bestie} (CD 15 del tiro salvezza) su una bestia dotata di una velocit&agrave; di nuotare innata. Il tridente recupera 1d3 cariche spese ogni giorno all&rsquo;alba.</p>" },
         { "id": "Trinket", "name": "Oggetto Insolito", "description": "<p>PHB page 159</p>" },
+        { "id": "Truth Serum", "name": "Siero Della Verità", "description": "<p><em>(ingerito)</em></p>\n<p>Una creatura sottoposta a questo veleno deve riuscire in un <strong>Tiro Salvezza su Costizione con CD 11</strong> o diventare @Compendium[dnd5e.rules.Avvelenato]{Avvelenata} per <strong>1 ora</strong>. La creatura @Compendium[dnd5e.rules.Avvelenato]{Avvelenata} non può dire consapevolmente una bugia, come se fosse sotto l'effetto dell'incantesimo @Compendium[dnd5e.spells.Zona di Verità].</p>" },
         { "id": "Two-Person Tent", "name": "Tenda", "description": "<div title=\"Page 153\"><div><div><p>Un semplice riparo portatile in tela, che può ospitare due persone.</p></div></div></div>" },
         { "id": "Universal Solvent", "name": "Solvente Universale", "description": "<p><em>Oggetto meraviglioso</em></p><p>Questa fiala contiene un liquido lattiginoso che emana un forte odore alcolico. Il personaggio pu&ograve; usare un&rsquo;azione per versare il contenuto della fiala su una superficie entro portata. Il liquido dissolve istantaneamente qualsiasi adesivo toccato, inclusa la colla meravigliosa, che copra fino a una superficie quadrata con lato di 30 cm.</p>" },
         { "id": "Vestments", "name": "Veste Sacra", "description": "<p>Veste semplice o ostentata, spesso usata da sacerdoti e altre figure religiose per rituali e cerimonie.</p>" },
