@@ -127,8 +127,8 @@ var races = {
 	"Hill Dwarf": "Nano delle Colline",
 	"Elf": "Elfo",
 	"High Elf": "Elfo Alto",
-	"Gnome": "Gnomo delle Rocce",
-	"Rock Gnome": "Gnomo",
+	"Rock Gnome": "Gnomo delle Rocce",
+	"Gnome": "Gnomo",
 	"Half Elf": "Mezzelfo",
 	"Half-Elf": "Mezzelfo",
 	"Half-elf": "Mezzelfo",
@@ -337,8 +337,8 @@ Hooks.once('init', () => {
 			"languages": (lang) => {
 				if (lang != null ) {
 					const languagesSplit = lang.split('; ');
-					var languagesFin = '';
-					var languagesTr = '';
+					let languagesFin = '';
+					let languagesTr = '';
 					languagesSplit.forEach(function(el){
 						languagesTr = languages[el.toLowerCase()] ;
 						if (languagesTr != null) {
@@ -367,64 +367,27 @@ Hooks.once('init', () => {
 				return rarity[r] ? rarity[r] : r
 			},
 			"raceRequirements": (requirements) => {
-				let translated = requirements;
-				const names = Object.keys(races);
-				names.forEach(name => {
-					translated = translated.replaceAll(name, races[name])
+				let names = requirements.split(',');
+				let translated = [];
+				names.map(name => name.trim()).forEach(name => {
+					translated.push(races[name] ? races[name] : name)
 				});
-				return translated;
+				return translated.join(', ');
 			},
 			"classRequirements": (requirements) => {
-				let translated = requirements;
-				const names = Object.keys(classes);
-				names.forEach(name => {
-					translated = translated.replaceAll(name, classes[name])
-				});
-				return translated;
-			},
-			"classNameFormula": (formula) => {
-				if(formula && typeof formula === 'string') {
-					let translated = formula;
-					const names = Object.keys(classes);
-					names.forEach(name => {
-						translated = translated.replaceAll(name.toLowerCase(), classes[name].toLowerCase())
+				let names = requirements.split(',');
+				let translated = [];
+				names.map(name => name.trim()).forEach(name => {
+					let keys = Object.keys(classes);
+					let translatedName = name;
+					keys.forEach(key => {
+						translatedName = translatedName.replace(key, classes[key])
 					});
-					return translated;
-				}
-			},
-			"damagePartClassName": (array1) => {
-				for (let i=0; i< array1.length; i++) {
-					let array2 = array1[i];
-					for (let j=0; j< array2.length; j++) {
-						let translated = array2[j];
-						if (translated && typeof translated === 'string') {
-							const names = Object.keys(classes);
-							names.forEach(name => {
-								translated = translated.replaceAll(name.toLowerCase(), classes[name].toLowerCase())
-							});
-							array2[j] = translated;
-						}
-					}
-					array1[i] = array2;
-				}
-				return array1;
+					translated.push(translatedName)
+				});
+				return translated.join(', ');
 			}
 		});
-
-		CONFIG.DND5E.classFeatures = {
-			"barbaro": CONFIG.DND5E.classFeatures["barbarian"],
-			"bardo": CONFIG.DND5E.classFeatures["bard"],
-			"chierico": CONFIG.DND5E.classFeatures["cleric"],
-			"druido": CONFIG.DND5E.classFeatures["druid"],
-			"guerriero": CONFIG.DND5E.classFeatures["fighter"],
-			"monaco": CONFIG.DND5E.classFeatures["monk"],
-			"paladino": CONFIG.DND5E.classFeatures["paladin"],
-			"ranger": CONFIG.DND5E.classFeatures["ranger"],
-			"ladro": CONFIG.DND5E.classFeatures["rogue"],
-			"stregone": CONFIG.DND5E.classFeatures["sorcerer"],
-			"warlock": CONFIG.DND5E.classFeatures["warlock"],
-			"mago": CONFIG.DND5E.classFeatures["wizard"]
-		};
 	}
 });
 

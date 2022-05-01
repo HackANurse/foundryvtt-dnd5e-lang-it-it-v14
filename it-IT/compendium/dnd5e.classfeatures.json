@@ -8,18 +8,6 @@
         "requirements": {
             "path": "data.requirements",
             "converter": "classRequirements"
-        },
-        "uses": {
-            "path": "data.uses.max",
-            "converter": "classNameFormula"
-        },
-        "formula": {
-            "path": "data.formula",
-            "converter": "classNameFormula"
-        },
-        "damageParts": {
-            "path": "data.damage.parts",
-            "converter": "damagePartClassName"
         }
     },
     "entries": [
