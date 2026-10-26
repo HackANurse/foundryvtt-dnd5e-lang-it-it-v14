@@ -1,39 +1,5 @@
 {
     "label": "Eroi Pronti All'Uso (SRD)",
-    "mapping": {
-        "alignment": {
-            "path": "data.details.alignment",
-            "converter": "alignement"
-        },
-        "race": {
-            "path": "data.details.race",
-            "converter": "race"
-        },
-        "senses": {
-            "path": "data.traits.senses",
-            "converter": "senses"
-        },
-        "movement": {
-            "path": "data.attributes.movement",
-            "converter":"movement"
-        },
-        "languages": {
-            "path": "data.traits.languages.custom",
-            "converter":"languages"
-        },
-        "di": {
-            "path": "data.traits.di.custom",
-            "converter":"di"
-        },
-        "dr": {
-            "path": "data.traits.dr.custom",
-            "converter":"di"
-        },
-        "token": {
-            "path": "token",
-            "converter":"token"
-        }
-    },
     "entries": [
         { "id": "Akra (Dragonborn Cleric)", "name": "Akra (Chierico Dragonide)" },
         { "id": "Aoth (Human Druid)", "name": "Aoth (Druido Umano)" },

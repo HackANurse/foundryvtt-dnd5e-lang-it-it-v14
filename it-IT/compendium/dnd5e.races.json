@@ -1,12 +1,7 @@
 {
-  "label": "Caratteristiche Razze (SRD)",
-  "mapping": {
-    "requirements": {
-      "path": "data.requirements",
-      "converter": "raceRequirements"
-    }
-  },
-  "entries": [
+    "label": "Caratteristiche Razze (SRD)",
+    "mapping": {"requirements": "system.requirements"},
+    "entries": [
     {
       "id": "Halfling Nimbleness",
       "name": "Agilità Halfling",

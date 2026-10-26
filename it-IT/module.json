@@ -1,36 +1,42 @@
 {
-  "name": "translation-dnd5e-it",
-  "title": "DnD5e Italian Translation",
-  "description": "Add Italian language to dnd5e system for FoundryVTT.",
-  "version": "0.50",
-  "minimumCoreVersion" : "9",
-  "compatibleCoreVersion":"9",
-
-  "systems": [
-    "dnd5e"
+  "id": "translation-dnd5e-it",
+  "title": "Traduzione italiana dnd5e (fork v14)",
+  "description": "Traduzione italiana per il sistema dnd5e.",
+  "version": "0.51",
+  "compatibility": {
+    "minimum": "14.367",
+    "maximum": "14"
+  },
+  "system": ["dnd5e"],
+  "relationships": {
+    "systems": [{
+      "id": "dnd5e",
+      "type": "system",
+      "compatibility": {
+        "minimum": "6.0.6",
+        "maximum": "6.0.6"
+      }
+    }],
+    "requires": [{
+      "id": "babele",
+      "type": "module",
+      "compatibility": {
+        "minimum": "2.8.0"
+      }
+    }]
+  },
+  "authors": [
+    {"name": "ariakas81, Simone, MrDaerlic, ciuei, DMage, Floppy, heirold, Elia.Hard"},
+    {"name": "HackANurse", "url": "https://github.com/HackANurse"}
   ],
-  "minimumSystemVersion": "1.6.0",
-
-  "dependencies": [{
-    "name": "babele",
-    "type": "module"
-  }],
-
-  "author": "ariakas81, Simone, MrDaerlic, ciuei, DMage, Floppy, heirold, Elia.Hard",
   "esmodules": ["babele-register.js"],
-  "scripts": [],
-  "styles": [
-    "./style.css"
-  ],
-  "packs": [],
-
+  "styles": ["style.css"],
   "languages": [{
-  	"lang": "it",
-    "name": "Italian",
+    "lang": "it",
+    "name": "Italiano",
     "path": "it.json"
   }],
-
-  "url": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it",
-  "manifest": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/raw/master/it-IT/module.json",
-  "download": "https://gitlab.com/riccisi/foundryvtt-dnd5e-lang-it-it/-/jobs/artifacts/0.50/raw/dnd5e-it-IT.zip?job=build"
+  "url": "https://github.com/HackANurse/foundryvtt-dnd5e-lang-it-it-v14",
+  "manifest": "https://github.com/HackANurse/foundryvtt-dnd5e-lang-it-it-v14/releases/latest/download/module.json",
+  "download": "https://github.com/HackANurse/foundryvtt-dnd5e-lang-it-it-v14/releases/download/v0.51/translation-dnd5e-it.zip"
 }

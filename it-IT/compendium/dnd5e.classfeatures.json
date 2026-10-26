@@ -1,15 +1,6 @@
 {
     "label": "Privilegi di Classe (SRD)",
-    "mapping": {
-        "range": {
-            "path": "data.range",
-            "converter": "range"
-        },
-        "requirements": {
-            "path": "data.requirements",
-            "converter": "classRequirements"
-        }
-    },
+    "mapping": {"requirements": "system.requirements"},
     "entries": [
         { "id": "Action Surge", "name": "Azione Impetuosa", "description": "<div title=\"Page 16\"><div><div><p>A partire dal 2° livello, puoi spingerti oltre i tuoi normali limiti per brevi periodi di tempo. Durante il tuo turno, puoi eseguire un’azione aggiuntiva oltre alla tua normale azione e una possibile azione bonus.<br>Una volta impiegato questo privilegio, devi terminare un riposo breve o lungo prima di riutilizzarlo. A partire dal 17° livello, puoi utilizzarlo due volte prima di riposare, ma solo una volta durante lo stesso turno.</p></div></div></div>" },
         { "id": "Additional Magical Secrets", "name": "Segreti Magici Aggiuntivi", "description": "<div title=\"Page 6\"><div><div><p>Al 6° livello, apprendi due incantesimi di tua scelta appartenenti a qualsiasi classe. Gli incantesimi devono essere di un livello di cui possiedi slot incantesimo, come mostrato sulla tabella Il Bardo, o trucchetti. Gli incantesimi scelti sono considerati incantesimi da bardo ma non sono conteggiati nel numero di incantesimi da bardo che conosci.</p></div></div></div>" },

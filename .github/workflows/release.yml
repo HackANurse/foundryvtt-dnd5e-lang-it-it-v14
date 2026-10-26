@@ -1,0 +1,30 @@
+name: Release module
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate and package
+        run: |
+          python3 -m json.tool it-IT/module.json >/dev/null
+          python3 -m json.tool it-IT/it.json >/dev/null
+          for file in it-IT/compendium/*.json; do python3 -m json.tool "$file" >/dev/null; done
+          test "v$(python3 -c 'import json; print(json.load(open("it-IT/module.json"))["version"])')" = "$GITHUB_REF_NAME"
+          mkdir -p translation-dnd5e-it
+          cp it-IT/module.json it-IT/it.json it-IT/babele-register.js it-IT/style.css translation-dnd5e-it/
+          cp -r it-IT/compendium translation-dnd5e-it/
+          zip -qr translation-dnd5e-it.zip translation-dnd5e-it
+          cp it-IT/module.json module.json
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" translation-dnd5e-it.zip module.json --generate-notes

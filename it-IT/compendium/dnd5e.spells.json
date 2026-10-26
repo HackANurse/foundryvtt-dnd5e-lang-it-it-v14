@@ -1,16 +1,6 @@
 {
     "label": "Incantesimi (SRD)",
-    "mapping": {
-        "range": {
-            "path": "data.range",
-            "converter": "range"
-        },
-        "target": {
-            "path": "data.target",
-            "converter": "range"
-        },
-        "materials": "data.materials.value"
-    },
+    "mapping": {"materials": "system.materials.value"},
     "entries": {
         "Acid Arrow": {
             "name": "Freccia Acida",
