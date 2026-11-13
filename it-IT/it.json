@@ -1006,7 +1006,9 @@
   "npc": "personaggio non giocatore",
   "npcPl": "Personaggi non giocanti",
   "vehicle": "Veicolo",
-  "vehiclePl": "Veicoli"
+  "vehiclePl": "Veicoli",
+  "faction": "Fazione",
+  "factionPl": "Fazioni"
 },
 "TYPES.ActiveEffect": {
   "enchantment": "Ammaliamento",
@@ -1049,18 +1051,22 @@
   "tool": "Strumento",
   "toolPl": "Strumenti",
   "weapon": "Arma",
-  "weaponPl": "Armi"
+  "weaponPl": "Armi",
+  "renown": "Fama",
+  "renownPl": "Fama"
 },
 "TYPES.RegionBehavior": {
   "dnd5e.applyActiveEffect": "Applica effetto attivo (5e)",
   "dnd5e.difficultTerrain": "Terreno difficile",
-  "dnd5e.rotateArea": "Ruota area"
+  "dnd5e.rotateArea": "Ruota area",
+  "dnd5e.antimagic": "Antimagia"
 },
 "TYPES.HINTS": {
   "RegionBehavior": {
     "dnd5e.applyActiveEffect": "Applica effetti attivi ai token mentre sono all'interno della Regione e soddisfano determinati criteri.",
     "dnd5e.difficultTerrain": "Segnare una regione come terreno difficile e impostare il suo tipo e chi colpisce.",
-    "dnd5e.rotateArea": "Ruotare gettoni, piastrelle, pareti e altri oggetti intorno a un punto di perno centrale."
+    "dnd5e.rotateArea": "Ruotare gettoni, piastrelle, pareti e altri oggetti intorno a un punto di perno centrale.",
+    "dnd5e.antimagic": "Impedisce l'uso di capacità e oggetti magici all'interno della regione."
   }
 },
 "DND5E.AbbreviationKg": "kg",
@@ -1628,6 +1634,10 @@
       "Duplicate": "Quell'articolo esiste già su questo progresso.",
       "Recursive": "Non puoi concedere un articolo nel suo progresso.",
       "Type": "{type} gli oggetti non possono essere aggiunti con questo tipo di avanzamento."
+    },
+    "DefaultTitle": {
+      "ClassFeatures": "Privilegi di classe",
+      "SubclassFeatures": "Privilegi di sottoclasse"
     }
   },
   "Label": "Avanzamento",
@@ -2619,11 +2629,26 @@
   },
   "Activities": "Attività",
   "Button": {
-    "rollAttack": "Attacco",
-    "rollCheck": "Prova di caratteristica",
-    "rollDamage": "Danno",
-    "rollFormula": "Tiro",
-    "rollSave": "Tiro salvezza"
+    "rollAttack": {
+      "Full": "Attacco",
+      "Short": "Attacco"
+    },
+    "rollCheck": {
+      "Full": "Prova di caratteristica",
+      "Short": "Prova"
+    },
+    "rollDamage": {
+      "Full": "Danni",
+      "Short": "Danni"
+    },
+    "rollFormula": {
+      "Full": "Tira",
+      "Short": "Tira"
+    },
+    "rollSave": {
+      "Full": "Tiro salvezza",
+      "Short": "Salvezza"
+    }
   },
   "Deltas": {
     "Created": "oggetto creato",
@@ -2644,10 +2669,11 @@
     "Actions": "Azioni oggetto",
     "Items": "oggetti",
     "Properties": "Proprietà oggetto",
-    "Roll": "Muori tiro",
-    "rollCheck": "Controlli di capacità",
-    "rollSave": "salvezza di getti",
-    "Targets": "Obiettivi"
+    "Roll": "Tiro",
+    "rollCheck": "Prove di caratteristica",
+    "rollSave": "Tiri salvezza",
+    "Targets": "Obiettivi",
+    "Additional": "Azioni aggiuntive"
   },
   "Targets": {
     "Count": "{number}× {name}"
@@ -2819,8 +2845,11 @@
 "DND5E.CONCENTRATION": {
   "Abbreviation": "C",
   "Action": {
-    "Break": "Concentrazione di interruzione",
-    "End": "Concentrazione finale"
+    "Break": {
+      "Full": "Interrompi concentrazione",
+      "Short": "Interrompi"
+    },
+    "End": "Termina concentrazione"
   },
   "Description": "State mantenendo la concentrazione sugli effetti della '{name}' {type}.",
   "Duration": {
@@ -3033,10 +3062,16 @@
     }
   },
   "Action": {
-    "ConsumeResource": "Consuma risorsa",
+    "ConsumeResource": {
+      "Full": "Consuma risorsa",
+      "Short": "Consuma"
+    },
     "Create": "Crea obiettivo di consumo",
     "Delete": "Elimina obiettivo consumo",
-    "RefundResource": "Risorsa di rimborso"
+    "RefundResource": {
+      "Full": "Restituisci risorsa",
+      "Short": "Restituisci"
+    }
   },
   "Empty": "Nessun consumo associato. Utilizzare il pulsante <i class=\"fas fa-plus\"></i> sopra per aggiungere obiettivi di consumo.",
   "Scaling": {
@@ -3260,6 +3295,10 @@
     "Radiant": "Radiante",
     "Slashing": "Slashing",
     "Thunder": "Tuono"
+  },
+  "Resistance": {
+    "Falling": "Caduta",
+    "UniqueCategory": "Tipi specifici"
   }
 },
 "DND5E.DamageApplication": {
@@ -3281,7 +3320,7 @@
   },
   "State": {
     "active": "Applicato",
-    "downgrade": "Declassato",
+    "downgrade": "Ri&shy;dotto",
     "ignore": "Ignorato"
   }
 },
@@ -3471,7 +3510,8 @@
     "Group": {
       "Custom": "Personalizzato",
       "Rules": "Regole",
-      "Standard": "Standard"
+      "Standard": "Standard",
+      "DamageApplicationOptions": "Opzioni di applicazione del danno"
     },
     "Label": "Variazione",
     "Title": "{effect} Cambia #{number}",
@@ -3487,7 +3527,27 @@
       },
       "Minimum": {
         "Label": "tiro minimo"
+      },
+      "DowngradeImmunityResistance": {
+        "Label": "Riduci immunità e resistenza"
+      },
+      "IgnoreImmunity": {
+        "Label": "Ignora immunità"
+      },
+      "IgnoreResistance": {
+        "Label": "Ignora resistenza"
+      },
+      "IgnoreVulnerability": {
+        "Label": "Ignora vulnerabilità"
       }
+    },
+    "Key": {
+      "Attack": "Tiri per colpire",
+      "Check": "Prove di caratteristica",
+      "D20": "Prove con d20",
+      "Damage": "Tiri dei danni",
+      "Healing": "Tiri di guarigione",
+      "Save": "Tiri salvezza"
     }
   },
   "DisabledTooltip": {
@@ -3560,7 +3620,8 @@
   "Tab": "Effetti",
   "Warning": {
     "RollCondition": "Le condizioni di effetto non possono fare riferimento alle proprietà 'roll.'. Spostare questa condizione nelle singole modifiche per l'effetto da applicare.",
-    "StatusCondition": "Gli effetti che gli status di concessione non possono essere condizionati agli status. Spostare questa condizione nelle singole modifiche per l'effetto da applicare."
+    "StatusCondition": "Gli effetti che gli status di concessione non possono essere condizionati agli status. Spostare questa condizione nelle singole modifiche per l'effetto da applicare.",
+    "DependentsWithoutGM": "La rimozione di {name} rimuove anche gli oggetti, le attività o gli effetti associati e richiede la presenza di un GM attivo."
   }
 },
 "DND5E.ENCHANT": {
@@ -3669,6 +3730,21 @@
     "magical": {
       "hint": "Questo incantesimo è magico e dovrebbe essere disabilitato quando la magia non è disponibile.",
       "label": "Magico"
+    },
+    "rider": {
+      "activities": {
+        "hint": "Queste attività aggiuntive vengono aggiunte all'oggetto incantato quando si applica l'incantamento e rimosse quando l'incantamento termina.",
+        "label": "Attività aggiuntive"
+      },
+      "effects": {
+        "hint": "Questi effetti aggiuntivi vengono aggiunti all'oggetto incantato quando si applica l'incantamento e rimossi quando l'incantamento termina.",
+        "label": "Effetti aggiuntivi"
+      },
+      "items": {
+        "hint": "Questi oggetti aggiuntivi vengono aggiunti alla creatura quando uno dei suoi oggetti viene incantato e rimossi se l'incantamento termina.",
+        "label": "Oggetti aggiuntivi"
+      },
+      "label": "Elementi associati"
     }
   },
   "Items": {
@@ -3689,6 +3765,9 @@
   "Warning": {
     "NotOnActor": "Gli incantesimi possono essere aggiunti solo agli oggetti, non direttamente agli attori.",
     "Override": "Questo valore viene modificato da un Incanto e non può essere modificato. Disabilita l'incanto nella scheda effetti per modificarlo."
+  },
+  "Rider": {
+    "Activity": "Attività associata all'incantamento"
   }
 },
 "DND5E.ENCOUNTER": {
@@ -4116,7 +4195,11 @@
   },
   "Monster": "Privilegio del mostro",
   "PietyTrait": "Tratto della torta",
-  "Species": "Privilegio di specie",
+  "Species": {
+    "Label": "Privilegio di specie",
+    "LabelLegacy": "Privilegio razziale",
+    "Lineage": "Discendenza"
+  },
   "SpeciesLegacy": "Privilegio razziale",
   "SupernaturalGift": {
     "Label": "Regalo soprannaturale",
@@ -4258,7 +4341,8 @@
   },
   "Warning": {
     "PhysicalItemOnly": "Sono supportati solo gli oggetti fisici.",
-    "PlaceMembers": "Errore nel mettere i token in scena."
+    "PlaceMembers": "Errore nel mettere i token in scena.",
+    "SupportedItemOnly": "Sono supportati solo gli oggetti fisici e le voci di fama."
   }
 },
 "DND5E.Habitat": {
@@ -4335,7 +4419,10 @@
       }
     }
   },
-  "HealingButton": "Guarigione",
+  "HealingButton": {
+    "Full": "Guarigione",
+    "Short": "Cura"
+  },
   "HealingRoll": "tiro di guarigione",
   "Hint": "Guarire una creatura",
   "Title": "Cura",
@@ -4488,7 +4575,9 @@
     "UnidentifiedContents": "Nascondi contenuti non identificati",
     "Versatile": "Versatile",
     "Verbal": "Verbale",
-    "WeightlessContents": "Contenuto senza peso"
+    "WeightlessContents": "Contenuto senza peso",
+    "Hydrating": "Idratante",
+    "Nutritious": "Nutriente"
   },
   "Rarity": {
     "Artifact": "Artifatto",
@@ -4540,7 +4629,11 @@
   },
   "Communication": {
     "Label": "Comunicazione a intervalli",
-    "Telepathy": "Telepatia"
+    "Telepathy": "Telepatia",
+    "Formatter": {
+      "Units": "Unità di {name}",
+      "Value": "Portata di {name}"
+    }
   },
   "Language": {
     "Aarakocra": "Aarakocra",
@@ -4589,7 +4682,10 @@
 },
 "DND5E.LegendaryResistance": {
   "Action": {
-    "Resist": "Resistenza leggendaria"
+    "Resist": {
+      "Full": "Resistenza leggendaria",
+      "Short": "Resisti"
+    }
   },
   "Label": "Resistenza leggendaria",
   "LabelPl": "Resistenza leggendaria",
@@ -5354,7 +5450,8 @@
   "Rule": "Scheda regola D&D 5e",
   "SpellList": "Scheda elenco degli incantesimi D&D 5e",
   "Token": "Scheda di fissaggio D&D 5e",
-  "Vehicle": "Scheda del veicolo D&D 5e"
+  "Vehicle": "Scheda del veicolo D&D 5e",
+  "Faction": "Scheda fazione di D&D 5e"
 },
 "DND5E.SheetModeEdit": "Modifica",
 "DND5E.SheetModePlay": "Riproduci",
@@ -5775,6 +5872,9 @@
     "NoProfile": "Impossibile trovare il profilo di convocazione {profileId} su '{item}'.",
     "PlaceTokens": "Errore nel mettere le convocazioni in scena.",
     "Wildcard": "È necessario avere 'Use File Browser' permessi per evocare creature con grafica jolly."
+  },
+  "DamageChanges": {
+    "Label": "Modifiche ai danni"
   }
 },
 "DND5E.Summoning": {
@@ -5824,7 +5924,10 @@
 },
 "DND5E.TARGET": {
   "Action": {
-    "PlaceTemplate": "Modello misurato sul posto"
+    "PlaceTemplate": {
+      "Full": "Posiziona modello misurato",
+      "Short": "Area"
+    }
   },
   "Count": {
     "Any": "Qualsiasi",
@@ -7209,7 +7312,8 @@
   "StatusSurprised": "Sorpreso",
   "StatusThreeQuartersCover": "Copertura a tre quarti",
   "StatusTotalCover": "Copertura totale",
-  "StatusTransformed": "Trasformato"
+  "StatusTransformed": "Trasformato",
+  "StatusAntimagic": "Antimagia"
 },
 "TYPES.JournalEntryPage.class": "Riassunto della classe",
 "TYPES.JournalEntryPage.map": "Posizione mappa",
@@ -7611,10 +7715,41 @@
       "Hint": "Nascondere le descrizioni degli oggetti NPC dai giocatori quando inviati alla chat dal DM. Nasconderà solo le descrizioni degli oggetti senza set di Chat Description.",
       "Name": "Descrizioni NPC nascoste"
     }
+  },
+  "RENOWN": {
+    "Hint": "Abilita il tracciamento facoltativo della fama per personaggi e gruppi.",
+    "Name": "Punteggi di fama"
   }
 },
 "SOURCE.BOOK.FreeRules": "Regole libere",
 "SOURCE.BOOK.SRD51": "Documento di riferimento del sistema 5.1",
 "SOURCE.BOOK.SRD52": "Documento di riferimento del sistema 5.2",
-"SIDEBAR.SortModePriority": "Ordina per priorità"
+"SIDEBAR.SortModePriority": "Ordina per priorità",
+"DND5E.FACTION": {
+  "Action": {
+    "AddMember": "Aggiungi membro"
+  }
+},
+"DND5E.FilterGroupFaction": "Raggruppa per fazione",
+"DND5E.RENOWN": {
+  "Action": {
+    "AddModifier": "Aggiungi modificatore di fama",
+    "DeleteModifier": "Elimina modificatore di fama"
+  },
+  "Empty": "Non ci sono ancora modificatori di fama. Usa il pulsante <i class=\"fas fa-plus\"></i> qui sopra per aggiungerne uno.",
+  "FIELDS": {
+    "modifiers": {
+      "element": {
+        "faction.label": "Fazione",
+        "value": {
+          "label": "Valore",
+          "placeholder": "0"
+        }
+      },
+      "label": "Modificatori"
+    }
+  },
+  "Search": "Cerca voci di fama",
+  "Unknown": "Sconosciuto"
+}
 }
