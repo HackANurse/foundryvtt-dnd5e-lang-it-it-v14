@@ -7,7 +7,6 @@
     "minimum": "14.367",
     "maximum": "14"
   },
-  "system": ["dnd5e"],
   "relationships": {
     "systems": [{
       "id": "dnd5e",
